@@ -15,6 +15,10 @@ jobs:
       with:
         toolchain: ${{ matrix.rust }}
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -92,6 +96,10 @@ jobs:
         path: ${{ runner.tool_cache }}/cargo-hack/bin
         key: cargo-hack-bin-${{ hashFiles('.github/caching/cargo-hack.lock') }}
     - run: echo "::add-path::${{ runner.tool_cache }}/cargo-hack/bin"
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -131,6 +139,10 @@ jobs:
       with:
         toolchain: stable
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -171,6 +183,10 @@ jobs:
       with:
         toolchain: stable
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -203,6 +219,10 @@ jobs:
       with:
         toolchain: ${{ matrix.rust }}
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -237,6 +257,10 @@ jobs:
       with:
         toolchain: stable
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -268,6 +292,10 @@ jobs:
       with:
         toolchain: stable
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -307,6 +335,10 @@ jobs:
       with:
         toolchain: nightly
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
@@ -358,6 +390,10 @@ jobs:
         toolchain: stable
         components: clippy
         profile: minimal
+    - name: Generate Cargo.lock
+      uses: actions-rs/cargo@v1
+      with:
+        command: generate-lockfile
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
